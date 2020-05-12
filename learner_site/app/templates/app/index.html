@@ -1,0 +1,10 @@
+<h3>Контакты</h3>
+
+<form method="post" >
+	{% csrf_token %}
+	
+	<textarea name="email" placeholder="Введите ваш email"></textarea>
+	<textarea name="message" placeholder="Введите ваше сообщение"></textarea>
+
+    <button type="submit">Отправить</button>
+</form>

@@ -5,3 +5,5 @@ learner_site/student/__pycache__
 learner_site/learner_site/__pycache__
 learner_site/db.sqlite3
 learner_site/learner_site/text.txt
+learner_site/data/messages/*
+learner_site/app/__pycache__
