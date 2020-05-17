@@ -1,6 +1,5 @@
 from datetime import datetime
 import django_rq
-# from django.shortcuts import render
 from django.views.generic import FormView
 from .forms import ContactForm
 from .tasks import send_message_job, send_push_admin_job, send_push_user_job
