@@ -6,8 +6,7 @@ from app.views import ContactFormView
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('teacher/', include('teacher.urls')),
-    path('student/', include('student.urls')),
+    path('people/', include('people.urls')),
 
     path('all_courses/', class_based_views.AllCoursesTemplateView.as_view()),
     path('course_create/', class_based_views.CourseCreateView.as_view()),

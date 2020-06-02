@@ -12,16 +12,17 @@ class City(models.Model):
 class Course(models.Model):
     name = models.TextField()
     number = models.SmallIntegerField()
-    city = models.ForeignKey(City, on_delete=models.SET_NULL, null=True)
+    city = models.ForeignKey(City, on_delete=models.CASCADE)
 
     def __str__(self):
         return self.name
-
 
 class Student(models.Model):
-    name = models.TextField()
-    age = models.IntegerField()
-    course = models.ForeignKey(Course, on_delete=models.SET_NULL, null=True)
+    first_name = models.CharField(max_length=50)
+    last_name = models.CharField(max_length=50)
 
-    def __str__(self):
-        return self.name
+class StudentInCources(models.Model):
+    name = models.CharField(max_length=50)
+    student = models.ForeignKey('people.Student', on_delete=models.CASCADE)
+    course = models.ForeignKey(Course, on_delete=models.CASCADE)
+
