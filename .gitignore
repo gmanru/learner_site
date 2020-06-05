@@ -5,8 +5,8 @@ learner_site/app/migrations/__pycache__/
 learner_site/teacher/__pycache__
 learner_site/teacher/migrations/__pycache__/
 
-learner_site/student/__pycache__
-learner_site/student/migrations/__pycache__
+learner_site/people/__pycache__
+learner_site/people/migrations/__pycache__
 
 learner_site/learner_site/__pycache__/
 learner_site/learner_site/text.txt
@@ -21,3 +21,7 @@ learner_site/app/migrations/__pycache__/
 learner_site/course/__pycache__/
 learner_site/course/migrations/__pycache__
 learner_site/course/views/__pycache__/
+
+learner_site/people/__pycache__/
+learner_site/people/migrations/__pycache__
+learner_site/people/views/__pycache__/

@@ -22,7 +22,11 @@ class Student(models.Model):
     last_name = models.CharField(max_length=50)
 
 class StudentInCources(models.Model):
-    name = models.CharField(max_length=50)
     student = models.ForeignKey('people.Student', on_delete=models.CASCADE)
     course = models.ForeignKey(Course, on_delete=models.CASCADE)
+    @property
+    def link(self):
+        return f"{self.student} in {self.course}"
 
+    def __str__(self):
+        return self.link

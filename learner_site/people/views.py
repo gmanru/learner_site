@@ -1,6 +1,21 @@
-from django.shortcuts import render
-from django.http import HttpResponse
+from rest_framework import status
+from rest_framework.generics import get_object_or_404
+from rest_framework.views import APIView, Response
+from rest_framework.viewsets import ModelViewSet
+from .models import Student, Teacher
 
 
-def index_view(request):
-    return HttpResponse('<h1>Hello django student panel</h1>')
+from .serializers import StudentSerializer, TeacherSerializer
+
+
+
+
+
+class StudentViewSet(ModelViewSet):
+    queryset = Student.objects.all()
+    serializer_class = StudentSerializer
+
+
+class TeacherViewSet(ModelViewSet):
+    queryset = Teacher.objects.all()
+    serializer_class = TeacherSerializer
