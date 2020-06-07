@@ -7,7 +7,8 @@ from django.views.generic.edit import UpdateView, DeleteView
 from django.urls import reverse_lazy
 
 from course.forms import CourseForm, StudentForm
-from course.models import Course, Student
+from course.models import Course 
+from people.models import Student
 
 
 class CreateStudentView(View):

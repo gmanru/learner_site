@@ -18,9 +18,9 @@ class Course(models.Model):
         return self.name
 
 
-class Student(models.Model):
+"""class Student(models.Model):
     first_name = models.CharField(max_length=50)
-    last_name = models.CharField(max_length=50)
+    last_name = models.CharField(max_length=50)"""
 
 
 class StudentInCources(models.Model):

@@ -1,6 +1,6 @@
 from django.forms import ModelForm
-from .models import City, Course, Student
-
+from .models import City, Course
+from people.models import Student
 
 class CityForm(ModelForm):
     class Meta:
