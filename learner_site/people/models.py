@@ -11,7 +11,6 @@ class Student(models.Model):
         through='course.StudentInCources',
         through_fields=('student', 'course'),
     )
-    
 
     @property
     def full_name(self):
@@ -32,4 +31,3 @@ class Teacher(models.Model):
 
     def __str__(self):
         return self.full_name
-

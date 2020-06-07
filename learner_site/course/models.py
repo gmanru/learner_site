@@ -17,9 +17,11 @@ class Course(models.Model):
     def __str__(self):
         return self.name
 
+
 class Student(models.Model):
     first_name = models.CharField(max_length=50)
     last_name = models.CharField(max_length=50)
+
 
 class StudentInCources(models.Model):
     student = models.ForeignKey('people.Student', on_delete=models.CASCADE)

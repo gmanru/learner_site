@@ -18,9 +18,3 @@ class StudentForm(ModelForm):
     class Meta:
         model = Student
         fields = '__all__'
-
-
-"""class StudentInCourcesForm(ModelForm):
-    class Meta:
-        model = StudentInCources
-        fields = '__all__'"""
