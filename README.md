@@ -29,40 +29,70 @@ user не видит группы и не может создать пользо
 работа с graphql по адресу http://127.0.0.1:8000/graphql/ 
 
 запросы курсы+преподаватели, курсы+студенты
-query {
-  allCourses{
-    name
-  }
-  allTeachers{
-    lastName
-    firstName
-  }
-}
 
 query {
+  
   allCourses{
+    
     name
+  
   }
-  allStudents{
+  
+  allTeachers{
+    
     lastName
+    
     firstName
+  
   }
+
+}
+
+
+query {
+  
+  allCourses{
+    
+    name
+  
+  }
+  
+  allStudents{
+    
+    lastName
+    
+    firstName
+  
+  }
+
 }
 
 запрос вида все курсы, преподаватели и все студенты, записанные на курсы
 
 
 query {
+  
   allCourses{
+    
     name
+    
     students{
+      
       lastName
+      
       firstName
+    
     }
+    
     teachers{
+      
       lastName
+      
       firstName
+    
     }
+  
   }
+
 }
 
