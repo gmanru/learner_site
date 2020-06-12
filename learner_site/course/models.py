@@ -13,14 +13,11 @@ class Course(models.Model):
     name = models.TextField()
     number = models.SmallIntegerField()
     city = models.ForeignKey(City, on_delete=models.CASCADE)
+    students = models.ForeignKey('people.Student', on_delete=models.CASCADE)
+    teachers = models.ForeignKey('people.Teacher', on_delete=models.CASCADE)
 
     def __str__(self):
         return self.name
-
-
-"""class Student(models.Model):
-    first_name = models.CharField(max_length=50)
-    last_name = models.CharField(max_length=50)"""
 
 
 class StudentInCources(models.Model):
@@ -28,7 +25,7 @@ class StudentInCources(models.Model):
     course = models.ForeignKey(Course, on_delete=models.CASCADE)
     @property
     def link(self):
-        return f"{self.student} in {self.course}"
+        return f"  {self.course}"
 
     def __str__(self):
         return self.link

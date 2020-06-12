@@ -9,9 +9,6 @@ router = DefaultRouter()
 router.register('student', StudentViewSet)
 router.register('teacher', TeacherViewSet)
 
-
-# app_name = 'people'
-
 urlpatterns = [
     path('api/', include(router.urls)),
     path('o/', include("oauth2_provider.urls", namespace="oauth2_provider")),

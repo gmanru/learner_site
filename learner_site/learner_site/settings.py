@@ -26,6 +26,7 @@ INSTALLED_APPS = [
     'app',
     'django_rq',
     'oauth2_provider',
+    "graphene_django",
 
 ]
 

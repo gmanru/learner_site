@@ -1,7 +1,8 @@
 from django.contrib import admin
 from django.urls import path, include
 import course.views.cb_views as class_based_views
-
+from graphene_django.views import GraphQLView
+from .schema import schema
 from app.views import ContactFormView
 
 urlpatterns = [
@@ -16,6 +17,8 @@ urlpatterns = [
     
     path('contacts', ContactFormView.as_view()),
 
+    path("graphql/", GraphQLView.as_view(graphiql=True, schema=schema)),
+    
     path('cb_create_student/', class_based_views.CreateStudentView.as_view()),
     path('all_students/', class_based_views.AllStudentsTemplateView.as_view()),
     path('student_detail/<int:pk>/', class_based_views.AllStudentsTemplateView.as_view()),

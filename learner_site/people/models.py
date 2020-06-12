@@ -6,11 +6,11 @@ class Student(models.Model):
     last_name = models.CharField(max_length=50)
     age = models.PositiveSmallIntegerField(null=True)
     email = models.EmailField()
-    members = models.ManyToManyField(
+    """members = models.ManyToManyField(
         'course.Course',
         through='course.StudentInCources',
         through_fields=('student', 'course'),
-    )
+    ) для дальнейшей связи с mtm моделью """ 
 
     @property
     def full_name(self):
