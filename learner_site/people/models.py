@@ -6,6 +6,7 @@ class Student(models.Model):
     last_name = models.CharField(max_length=50)
     age = models.PositiveSmallIntegerField(null=True)
     email = models.EmailField()
+    course = models.ManyToManyField('course.Course', related_name="course")
     """members = models.ManyToManyField(
         'course.Course',
         through='course.StudentInCources',
