@@ -12,8 +12,8 @@ class City(models.Model):
 class Course(models.Model):
     name = models.TextField()
     number = models.SmallIntegerField()
-    city = models.ForeignKey(City, on_delete=models.CASCADE)
-    students = models.ForeignKey('people.Student', on_delete=models.CASCADE)
+    city = models.ForeignKey(City, on_delete=models.PROTECT)
+    students = models.ManyToManyField('people.Student', related_name="courses")
     teachers = models.ForeignKey('people.Teacher', on_delete=models.CASCADE)
 
     def __str__(self):

@@ -9,8 +9,28 @@ with open("learner_site/text.txt", encoding='utf-8') as f:
 
 DEBUG = True
 
-ALLOWED_HOSTS = []
+LOGGING = {
+    'version': 1,
+    'disable_existing_loggers': False,
+    'handlers': {
+        'console': {
+            'class': 'logging.StreamHandler',
+        },
+    },
+    'loggers': {
+        'django.db.backends': {
+            'level': 'DEBUG',
+            'handlers': ['console'],
+        },
+    },
+}
 
+ALLOWED_HOSTS = []
+INTERNAL_IPS = [
+    # ...
+    '127.0.0.1',
+    # ...
+]
 
 INSTALLED_APPS = [
     'django.contrib.admin',
@@ -26,7 +46,8 @@ INSTALLED_APPS = [
     'app',
     'django_rq',
     'oauth2_provider',
-    "graphene_django",
+    'graphene_django',
+    'debug_toolbar',
 
 ]
 
@@ -38,6 +59,7 @@ MIDDLEWARE = [
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
+    'debug_toolbar.middleware.DebugToolbarMiddleware',
 ]
 
 ROOT_URLCONF = 'learner_site.urls'
