@@ -48,11 +48,14 @@ INSTALLED_APPS = [
     'oauth2_provider',
     'graphene_django',
     'debug_toolbar',
+    #'corsheaders',
+    'frontend',
 
 ]
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
+    #'corsheaders.middleware.CorsMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
     'django.middleware.common.CommonMiddleware',
     'django.middleware.csrf.CsrfViewMiddleware',
@@ -60,7 +63,11 @@ MIDDLEWARE = [
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
     'debug_toolbar.middleware.DebugToolbarMiddleware',
+    'oauth2_provider.middleware.OAuth2TokenMiddleware',
 ]
+
+#CORS_ORIGIN_ALLOW_ALL = True
+
 
 ROOT_URLCONF = 'learner_site.urls'
 
@@ -154,3 +161,5 @@ OAUTH2_PROVIDER = {
         'groups': 'Access to your groups',
     }
 }
+
+STATICFILES_DIRS = [os.path.join(BASE_DIR, 'static')]

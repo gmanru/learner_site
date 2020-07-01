@@ -6,10 +6,23 @@ from django.views.generic.list import ListView
 from django.views.generic.edit import UpdateView, DeleteView
 from django.urls import reverse_lazy
 
+from rest_framework import status
+from rest_framework.generics import get_object_or_404
+from rest_framework.views import APIView, Response
+from rest_framework.viewsets import ModelViewSet
+
 from course.forms import CourseForm, StudentForm
 from course.models import Course 
 from people.models import Student
 
+from rest_framework.permissions import IsAuthenticated
+from rest_framework.generics import (
+    ListAPIView,
+    ListCreateAPIView,
+    RetrieveAPIView,
+)
+
+from ..serializers import CourseSerializer
 
 class CreateStudentView(View):
 
@@ -92,3 +105,8 @@ class StudentCreateView(CreateView):
 
     def get_success_url(self):
         return '/student_detail/{}/'.format(self.object.pk)
+
+
+class CourseViewSet(ModelViewSet):
+    queryset = Course.objects.all()
+    serializer_class = CourseSerializer

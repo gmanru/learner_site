@@ -10,7 +10,11 @@ from app.views import ContactFormView
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('people/', include('people.urls')),
+    path('frontend/', include('frontend.urls')),
+    path('course/', include('course.urls')),
 
+
+    
     path('all_courses/', class_based_views.AllCoursesTemplateView.as_view()),
     path('course_create/', class_based_views.CourseCreateView.as_view()),
     path('course_detail/<int:pk>/', class_based_views.CourseDetailView.as_view()),

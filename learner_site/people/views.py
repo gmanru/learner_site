@@ -5,7 +5,7 @@ from rest_framework.viewsets import ModelViewSet
 from .models import Student, Teacher
 
 
-from .serializers import StudentSerializer, TeacherSerializer
+from .serializers import StudentSerializer, TeacherSerializer, UserSerializer, GroupSerializer
 
 from django.contrib.auth.models import User, Group
 
@@ -21,7 +21,7 @@ from oauth2_provider.contrib.rest_framework import (
     TokenHasScope,
 )
 
-from .serializers import UserSerializer, GroupSerializer
+
 
 
 class UserList(ListCreateAPIView):
